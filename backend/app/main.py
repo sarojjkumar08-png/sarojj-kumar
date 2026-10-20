@@ -53,13 +53,16 @@ async def stop_daily_agent_cycle():
 # Allow the Next.js frontend on ports 3000 and 3001.
 app.add_middleware(
     CORSMiddleware,
-   allow_origins=[
+   
+allow_origins=[
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3001",
     "http://10.104.103.27:3001",
+    "https://sarojj-kumar-bh7n.vercel.app",
 ],
+
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
