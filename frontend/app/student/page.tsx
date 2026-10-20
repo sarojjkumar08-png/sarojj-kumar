@@ -14,7 +14,9 @@ import {
 } from "recharts";
 
 // SkillTruth backend runs on port 8001
-const API = "http://10.104.103.27:8001";
+
+const API = process.env.NEXT_PUBLIC_API_URL || "https://sarojj-kumar.onrender.com";
+
 const STUDENTS = [
   { id: "student-001", name: "Arjun" },
   { id: "student-002", name: "Priya" },
