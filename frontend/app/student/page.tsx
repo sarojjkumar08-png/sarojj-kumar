@@ -42,7 +42,7 @@ export default function Student() {
   const [msg, M] = useState("");
   const [ask, K] = useState("");
   const [busy, B] = useState(false);
-
+const [coachReply, setCoachReply] = useState("");s
   async function load() {
     try {
       
@@ -229,7 +229,7 @@ const r = await fetch(
         );
       }
 
-      M(result.answer || "Coach response received.");
+      setCoachReply(result.answer || "Coach response received.");
     } catch (e: any) {
       E(`Coach request failed: ${e.message}`);
     } finally {
@@ -427,7 +427,20 @@ const r = await fetch(
         >
           Ask Coach Agent
         </button>
+        {coachReply && (
+  <div className="notice" style={{ marginTop: 16 }}>
+    <strong>Coach Agent Reply</strong>
+    <p style={{ whiteSpace: "pre-wrap" }}>{coachReply}</p>
+  </div>
+)}
       </section>
+
+{coachReply && (
+  <section className="panel" style={{ marginTop: 20 }}>
+    <h2>Coach Agent Reply</h2>
+    <p style={{ whiteSpace: "pre-wrap" }}>{coachReply}</p>
+  </section>
+)}
 
       {quiz && (
         <section
