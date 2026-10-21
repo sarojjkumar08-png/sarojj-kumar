@@ -42,7 +42,7 @@ export default function Student() {
   const [msg, M] = useState("");
   const [ask, K] = useState("");
   const [busy, B] = useState(false);
-const [coachReply, setCoachReply] = useState("");s
+const [coachReply, setCoachReply] = useState("");
   async function load() {
     try {
       
@@ -435,12 +435,7 @@ const r = await fetch(
 )}
       </section>
 
-{coachReply && (
-  <section className="panel" style={{ marginTop: 20 }}>
-    <h2>Coach Agent Reply</h2>
-    <p style={{ whiteSpace: "pre-wrap" }}>{coachReply}</p>
-  </section>
-)}
+
 
       {quiz && (
         <section
